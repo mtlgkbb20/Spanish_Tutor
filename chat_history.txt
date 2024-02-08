@@ -1,88 +1,18 @@
-Beginning of file!
 
-User: Hello. Response: Hello! How may I assist you today?
-User: Can you teach me Spanish? Response: ¡Hola! I can help you learn Spanish. What would you like to learn first?
-
-Here are some basic Spanish phrases to get you started:
-
-* Hola - Hello
-* Buenos días - Good morning
-* Buenas tardes - Good afternoon
-* Buenas noches - Good evening
-* ¿Cómo estás? - How are you?
-* Bien, gracias - I'm fine, thank you
-* ¿Cómo te llamas? - What's your name?
-* Me llamo [your name] - My name is [your name]
-* Mucho gusto - Nice to meet you
-* Hasta luego - Goodbye
-
-If you want to learn more, here are some resources that can help:
-
-* Duolingo: A free language learning app that offers courses in Spanish and many other languages.
-* Memrise: Another free language learning app that uses flashcards to help you memorize new words and phrases.
-* Pimsleur: A paid language learning program that uses audio lessons to teach you Spanish.
-* Rosetta Stone: A paid language learning program that uses interactive lessons to teach you Spanish.
-
-You can also find many free and paid Spanish language learning resources online, such as videos, podcasts, and articles.
-
-¡Buena suerte! (Good luck!)
-User: Ama ingilizce-Ýspanyolca anlamýyorum da Türkçe-Ýspanyolca anlatýr mýsýn? Response: Elbette, Türkçe-Ýspanyolca olarak da sana yardýmcý olabilirim.
-
-Ýþte baþlangýç için bazý temel Ýspanyolca ifadeler:
-
-* Merhaba - Hola
-* Günaydýn - Buenos días
-* Ýyi akþamlar - Buenas tardes
-* Ýyi geceler - Buenas noches
-* Nasýlsýn? - ¿Cómo estás?
-* Ýyiyim, teþekkür ederim - Bien, gracias
-* Adýn ne? - ¿Cómo te llamas?
-* Benim adým [adýn] - Me llamo [adýn]
-* Memnun oldum - Mucho gusto
-* Görüþürüz - Hasta luego
-
-Daha fazlasýný öðrenmek istiyorsan, sana yardýmcý olabilecek bazý kaynaklar þunlardýr:
-
-* Duolingo: Ýspanyolca ve diðer birçok dilde kurslar sunan ücretsiz bir dil öðrenme uygulamasý.
-* Memrise: Yeni kelimeleri ve ifadeleri ezberlemenize yardýmcý olmak için kelime kartlarý kullanan bir baþka ücretsiz dil öðrenme uygulamasý.
-* Pimsleur: Sana Ýspanyolca öðretmek için sesli dersler kullanan ücretli bir dil öðrenme programý.
-* Rosetta Stone: Sana Ýspanyolca öðretmek için etkileþimli dersler kullanan ücretli bir dil öðrenme programý.
-
-Ayrýca çevrimiçi olarak birçok ücretsiz ve ücretli Ýspanyolca öðrenme kaynaðý bulabilirsin, örneðin videolar, podcast'ler ve makaleler.
-
-¡Buena suerte! (Ýyi þanslar!)
-User: Teþekkürler Grammer de öðretir misin? Response: Elbette, Ýspanyolca gramer de öðretebilirim. Ýþte baþlangýç için bazý temel Ýspanyolca gramer kurallarý:
-
-* **Ýsimler:** Ýspanyolcada isimlerin iki cinsiyeti vardýr: eril ve diþil. Eril isimler genellikle "-o" ile, diþil isimler ise "-a" ile biter. Örneðin, "el libro" (kitap) eril bir isimdir, "la mesa" (masa) ise diþil bir isimdir.
-* **Sýfatlar:** Sýfatlar isimleri niteler. Sýfatlar genellikle isimlerden sonra gelir ve isimlerin cinsiyetine ve sayýsýna göre çekimlenir. Örneðin, "el libro grande" (büyük kitap), "la mesa pequeña" (küçük masa).
-* **Fiiller:** Fiiller eylemleri veya durumlarý ifade eder. Ýspanyolcada fiillerin birçok çekimi vardýr. Fiillerin çekimi, fiilin zamanýna, kipine, yapýsýna ve öznesine göre deðiþir. Örneðin, "hablar" (konuþmak) fiilinin þimdiki zaman, etken kip, tekil birinci þahýs çekimi "hablo" (konuþuyorum) þeklindedir.
-* **Zamirler:** Zamirler isimlerin yerini tutar. Ýspanyolcada birçok farklý zamir vardýr. En yaygýn zamirler þunlardýr:
-
-    * yo (ben)
-    * tú (sen)
-    * él (o)
-    * ella (o)
-    * nosotros (biz)
-    * vosotros (siz)
-    * ellos (onlar)
-    * ellas (onlar)
-
-* **Edatlar:** Edatlar kelimeler arasýndaki iliþkileri gösterir. Ýspanyolcada birçok farklý edat vardýr. En yaygýn edatlar þunlardýr:
-
-    * de (dan, den)
-    * a (a, için)
-    * en (içinde, üzerinde)
-    * con (ile)
-    * sin (olmadan)
-
-Bu, Ýspanyolca gramerinin sadece bir baþlangýcýdýr. Daha fazlasýný öðrenmek için birçok kaynak mevcuttur.
-
-Umarým bu bilgiler iþine yarar!
-User: Sað olasýn Response: Rica ederim! Umarým Ýspanyolca öðrenme yolculuðunda baþarýlý olursun.
-
-Baþka sorularýn veya öðrenmek istediðin þeyler varsa, her zaman buradayým.
-User: exit Response: ¡Hasta luego! (Görüþürüz!)
-
-Umarým sana yardýmcý olabilmiþimdir. Ýspanyolca öðrenme yolculuðunda baþarýlar dilerim.
-User: Hello. Response: Hello there! How may I assist you today? Let's chat and explore anything you'd like to discuss or learn about. Whether you have questions, need information, or simply want to have a conversation, I'm here to help. Is there a particular topic or subject you'd like to start with? Feel free to ask me anything, and I'll do my best to answer or provide you with relevant information. Let's dive in and discover new things together!
-User: exit Response: Thank you for chatting with me. It was a pleasure conversing with you. If you have any more questions or need assistance in the future, feel free to reach out. Until next time, I wish you all the best!
+[parts {
+  text: "Hello."
+}
+role: "user"
+, parts {
+  text: "Greetings! How may I assist you today? I\'m here to help with any questions or tasks you may have. Just let me know what\'s on your mind, and I\'ll do my best to provide information or guidance. I\'m still under development, but I\'m eager to learn and improve."
+}
+role: "model"
+, parts {
+  text: "exit"
+}
+role: "user"
+, parts {
+  text: "Thank you for your time. I hope I was able to be of assistance. If you have any other questions or requests, feel free to reach out to me again. I\'m always here to help.\n\nGoodbye for now!"
+}
+role: "model"
+]
