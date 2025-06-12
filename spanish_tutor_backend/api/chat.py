@@ -45,9 +45,11 @@ def chat(body: ChatBody):
     evaluation = ""
     if len(body.history) % 3 == 0:
         convo_str = "\n".join(f'{m["speaker"]}: {m["message"]}' for m in body.history)
+        filled = eval_prompt.replace("{history}", convo_str)
+
         eval_resp = openai.ChatCompletion.create(
-            model="gpt-4.1-nano",
-            messages=[{"role":"user","content": eval_prompt.format(history=convo_str)}],
+            model="gpt-4.1-mini",
+            messages=[{"role":"user","content": filled}],
             temperature=0.3,
             max_tokens=200
         )

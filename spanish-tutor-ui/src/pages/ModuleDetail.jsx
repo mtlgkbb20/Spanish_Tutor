@@ -87,37 +87,50 @@ export default function ModuleDetail() {
     }
   }, [messages]);
 
-  const handleChatSend = async (e) => {
+    const handleChatSend = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
 
-    setMessages((m) => [...m, { sender: "user", text: input }]);
+    setMessages(m => [...m, { sender: "user", text: input }]);
     setInput("");
     setChatLoading(true);
 
     try {
+      const payload = {
+        user_id: parseInt(localStorage.getItem("userId"), 10),  // ← buraya
+        history: [
+          // history array’iniz; örneğin:
+          ...messages.map(m => ({
+            speaker: m.sender === "user" ? "Student" : "Teacher",
+            message: m.text
+          })),
+          { speaker: "Student", message: input }
+        ],
+        context: {
+          level: levelObj.level,
+          module: moduleName
+        }
+      };
+
       const r = await fetch("http://127.0.0.1:8000/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          message: input,
-          context: { level: levelObj.level, module: moduleName },
-        }),
+        body: JSON.stringify(payload)
       });
+
+      if (!r.ok) throw new Error("Chat API error");
       const d = await r.json();
-      setMessages((m) => [
-        ...m,
-        { sender: "ai", text: d.reply ?? "…" },
-      ]);
-    } catch {
-      setMessages((m) => [
-        ...m,
-        { sender: "ai", text: "AI yanıtı alınamadı." },
-      ]);
+      setMessages(m => [...m, { sender: "ai", text: d.teacher }]);
+      if (d.evaluation) {
+        setMessages(m => [...m, { sender: "ai", text: d.evaluation }]);
+      }
+    } catch (err) {
+      setMessages(m => [...m, { sender: "ai", text: "AI yanıtı alınamadı." }]);
     } finally {
       setChatLoading(false);
     }
   };
+
 
   // — Modül tamamla
   const handleCompleteModule = async () => {
