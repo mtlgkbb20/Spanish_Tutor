@@ -1,6 +1,9 @@
 from sqlalchemy import Column, Integer, String, Float, Text, ForeignKey, DateTime
 from datetime import datetime
-from .db import Base
+import os 
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from db import Base
 
 class User(Base):
     __tablename__ = "users"

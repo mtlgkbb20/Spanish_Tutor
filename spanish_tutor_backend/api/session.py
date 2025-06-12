@@ -2,9 +2,13 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy.orm import Session as ORMSession
 from datetime import datetime
-from ..db import SessionLocal
-from ..models import Session as SessionTbl, User
+import os 
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from db import SessionLocal
+from models import Session as SessionTbl, User
 from sqlalchemy import func
+
 
 router = APIRouter()
 def get_db():

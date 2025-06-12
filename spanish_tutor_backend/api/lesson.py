@@ -1,10 +1,14 @@
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
-from ..db import SessionLocal
-from ..models import LessonContent
+import os 
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from config import OPENAI_API_KEY
+from db import SessionLocal
+from models import LessonContent
 import openai, os, json
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = OPENAI_API_KEY
 
 router = APIRouter()
 def get_db():
@@ -28,22 +32,39 @@ def get_lesson(body: LessonRequest, db: Session = Depends(get_db)):
         return row.__dict__ | {"cached": True}
 
     prompt = f"""
-Provide a short JSON lesson for {body.level} on "{body.module_title}".
-Keys: grammar, words (array), sentences (array of 3), dialogue.
-"""
+    You are a Spanish tutor. Create a concise lesson for level {body.level}. Topic: {body.module_title}.
+
+    ⚙️ **Return ONLY valid JSON** with the following exact keys:
+    "grammar": "<short paragraph>",
+    "words": [               # 8-12 giriş
+        {{"es": "<spanish>", "en": "<english>"}}
+    ],
+    "sentences": [ "<10 sentences…>" ],
+    "dialogue": [            # en az 10 replik
+        {{"speaker": "Persona 1", "text": "<line>"}},
+        {{"speaker": "Persona 2", "text": "<line>"}}
+    ]
+
+    NO code fences, NO extra keys.
+    """
     resp = openai.ChatCompletion.create(
-        model="gpt-4o",
-        messages=[{"role":"user","content":prompt}],
-        temperature=0.4, max_tokens=500
+        model="gpt-4o-mini",
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.4,
+        max_tokens=650,
+        response_format={"type": "json_object"}   # 🔑 JSON-mode
     )
-    data = json.loads(resp["choices"][0]["message"]["content"])
+    data = resp.choices[0].message.content       # zaten geçerli JSON
+    lesson = json.loads(data)
 
     row = LessonContent(
-        user_id=body.user_id, curriculum_id=body.curriculum_id,
-        grammar=data["grammar"],
-        words=",".join(data["words"]),
-        sentences="\n".join(data["sentences"]),
-        dialogue=data["dialogue"]
+        user_id       = body.user_id,
+        curriculum_id = body.curriculum_id,
+        grammar       = lesson["grammar"],
+        words         = json.dumps(lesson["words"], ensure_ascii=False),
+        sentences     = json.dumps(lesson["sentences"], ensure_ascii=False),
+        dialogue      = json.dumps(lesson["dialogue"], ensure_ascii=False)
     )
+
     db.add(row); db.commit(); db.refresh(row)
     return row.__dict__ | {"cached": False}
