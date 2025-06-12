@@ -9,6 +9,7 @@ import NavigationBar from "../components/NavigationBar";
 import React from "react";                 // 👈 satırı ekle
 
 
+
 export default function Dashboard() {
   const navigate = useNavigate();
   const [progressData, setProgressData] = useState([]);

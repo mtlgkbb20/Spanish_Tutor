@@ -7,6 +7,8 @@ import { useEffect, useState, useRef, useMemo } from "react";
 import { curriculum } from "../data/curriculum";
 import QuizComponent from "../components/QuizComponent";
 import React from "react";                 // 👈 satırı ekle
+import NavigationBar from "../components/NavigationBar";
+
 
 export default function ModuleDetail() {
   const { level, idx } = useParams();              // /module/:level/:idx
@@ -95,119 +97,120 @@ export default function ModuleDetail() {
   };
 
   return (
-    <Box sx={{ minHeight:"100vh", bgcolor:"#f5f7fb" }}>
-      <Box sx={{ p:4, pb:0 }}>
-        <Typography variant="h4" color="primary" fontWeight="bold">{levelObj?.level} – {levelObj?.title}</Typography>
-        <Typography variant="h5">{moduleObj?.title}</Typography>
-        <Typography color="text.secondary" mb={3}>{moduleObj?.desc}</Typography>
-      </Box>
+    <>
+      <NavigationBar />
+        <Box sx={{ minHeight: "100vh", bgcolor: "#f5f7fb" }}>
+        <Box sx={{ p: 4, pb: 0 }}>
+          <Typography variant="h4" color="primary" fontWeight="bold">{levelObj?.level} – {levelObj?.title}</Typography>
+          <Typography variant="h5">{moduleObj?.title}</Typography>
+          <Typography color="text.secondary" mb={3}>{moduleObj?.desc}</Typography>
+        </Box>
 
-      <Grid container spacing={4} sx={{ p:4, pt:0 }}>
-        {/* Chat */}
-        <Grid item xs={12} md={4}>
-          <Paper elevation={3} sx={{ p:3, minHeight:480, display:"flex", flexDirection:"column" }}>
-            <Typography variant="h6" color="primary" fontWeight="bold" mb={2}>Spanish Tutor Chat</Typography>
-            <Box
-              ref={chatBoxRef}
-              sx={{
-                flexGrow:1,bgcolor:"#f0f0f0",borderRadius:2,p:2,
-                overflowY:"auto", mb:2, minHeight:250, maxHeight:300
-              }}
-            >
-              {messages.map((m,i)=>(
-                <Box key={i} align={m.sender==="user"?"right":"left"} mb={1}>
-                  <Typography
-                    sx={{
-                      display:"inline-block",
-                      bgcolor:m.sender==="user"?"#2196f3":"#e0e0e0",
-                      color:m.sender==="user"?"#fff":"#000",
-                      borderRadius:2, px:2, py:1, fontSize:15,
-                      maxWidth:"90%", wordBreak:"break-word"
-                    }}
-                  >
-                    {m.text}
+        <Grid container spacing={4} sx={{ p: 4, pt: 0 }}>
+          {/* Chat */}
+          <Grid item xs={12} md={4}>
+            <Paper elevation={3} sx={{ p: 3, minHeight: 480, display: "flex", flexDirection: "column" }}>
+              <Typography variant="h6" color="primary" fontWeight="bold" mb={2}>Spanish Tutor Chat</Typography>
+              <Box
+                ref={chatBoxRef}
+                sx={{
+                  flexGrow: 1, bgcolor: "#f0f0f0", borderRadius: 2, p: 2,
+                  overflowY: "auto", mb: 2, minHeight: 250, maxHeight: 300
+                }}
+              >
+                {messages.map((m, i) => (
+                  <Box key={i} align={m.sender === "user" ? "right" : "left"} mb={1}>
+                    <Typography
+                      sx={{
+                        display: "inline-block",
+                        bgcolor: m.sender === "user" ? "#2196f3" : "#e0e0e0",
+                        color: m.sender === "user" ? "#fff" : "#000",
+                        borderRadius: 2, px: 2, py: 1, fontSize: 15,
+                        maxWidth: "90%", wordBreak: "break-word"
+                      }}
+                    >
+                      {m.text}
+                    </Typography>
+                  </Box>
+                ))}
+                {chatLoading && (
+                  <Typography sx={{ display: "inline-block", bgcolor: "#e0e0e0", color: "#888", borderRadius: 2, px: 2, py: 1 }}>…</Typography>
+                )}
+              </Box>
+              <Divider sx={{ mb: 2 }} />
+              <Box component="form" display="flex" gap={1} onSubmit={handleChatSend}>
+                <TextField
+                  placeholder="Mesaj yazın..."
+                  variant="outlined"
+                  size="small"
+                  sx={{ flexGrow: 1 }}
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  disabled={chatLoading} />
+                <Button variant="contained" type="submit" disabled={chatLoading}>Gönder</Button>
+              </Box>
+            </Paper>
+          </Grid>
+
+          {/* Orta: Sticky + Quiz */}
+          <Grid item xs={12} md={4}>
+            <Grid container direction="column" spacing={3}>
+              <Grid item>
+                <Paper elevation={2} sx={{ p: 3, bgcolor: "#fffde7", borderRadius: 3 }}>
+                  <Typography variant="h6" color="warning.main" fontWeight="bold">Sticky Notes</Typography>
+                  <Typography variant="body1" color="text.secondary" mt={2}>
+                    Buraya konuya özel önemli notları ekleyebilirsin!
                   </Typography>
-                </Box>
-              ))}
-              {chatLoading && (
-                <Typography sx={{ display:"inline-block", bgcolor:"#e0e0e0", color:"#888", borderRadius:2, px:2, py:1 }}>…</Typography>
-              )}
-            </Box>
-            <Divider sx={{ mb:2 }} />
-            <Box component="form" display="flex" gap={1} onSubmit={handleChatSend}>
-              <TextField
-                placeholder="Mesaj yazın..."
-                variant="outlined"
-                size="small"
-                sx={{ flexGrow:1 }}
-                value={input}
-                onChange={(e)=>setInput(e.target.value)}
-                disabled={chatLoading}
-              />
-              <Button variant="contained" type="submit" disabled={chatLoading}>Gönder</Button>
-            </Box>
-          </Paper>
-        </Grid>
+                </Paper>
+              </Grid>
+              <Grid item>
+                <Paper elevation={2} sx={{ p: 3, borderRadius: 3 }}>
+                  <Typography variant="subtitle1" fontWeight="bold" color="info.main">Subject Notes</Typography>
+                  <Typography variant="body1" color="text.secondary" mt={2}>
+                    Şu an seçili olan modül için öğretmen ya da AI notları burada gösterilecek.
+                  </Typography>
 
-        {/* Orta: Sticky + Quiz */}
-        <Grid item xs={12} md={4}>
-          <Grid container direction="column" spacing={3}>
-            <Grid item>
-              <Paper elevation={2} sx={{ p:3, bgcolor:"#fffde7", borderRadius:3 }}>
-                <Typography variant="h6" color="warning.main" fontWeight="bold">Sticky Notes</Typography>
-                <Typography variant="body1" color="text.secondary" mt={2}>
-                  Buraya konuya özel önemli notları ekleyebilirsin!
-                </Typography>
-              </Paper>
-            </Grid>
-            <Grid item>
-              <Paper elevation={2} sx={{ p:3, borderRadius:3 }}>
-                <Typography variant="subtitle1" fontWeight="bold" color="info.main">Subject Notes</Typography>
-                <Typography variant="body1" color="text.secondary" mt={2}>
-                  Şu an seçili olan modül için öğretmen ya da AI notları burada gösterilecek.
-                </Typography>
-
-                {/* Mini Quiz */}
-                <QuizComponent curriculumId={curriculumId} onSuccess={handleCompleteModule}/>
-              </Paper>
+                  {/* Mini Quiz */}
+                  <QuizComponent curriculumId={curriculumId} onSuccess={handleCompleteModule} />
+                </Paper>
+              </Grid>
             </Grid>
           </Grid>
+
+          {/* Sağ: Lesson Content */}
+          <Grid item xs={12} md={4}>
+            <Box sx={{ position: { md: "sticky" }, top: { md: 40 }, maxHeight: { md: "80vh" }, overflowY: "auto" }}>
+              <Paper elevation={2} sx={{ p: 3, bgcolor: "#e8f5e9", borderRadius: 3, minHeight: 420 }}>
+                <Typography variant="h6" fontWeight="bold" color="success.dark" mb={2}>Lesson Content</Typography>
+
+                {lesLoad && <CircularProgress />}
+                {lesError && <Alert severity="error">{lesError}</Alert>}
+
+                {lesson && (
+                  <>
+                    <Typography variant="subtitle2"><b>Grammar:</b></Typography>
+                    <Typography>{lesson.grammar}</Typography>
+
+                    <Typography variant="subtitle2" mt={2}><b>Related Words:</b></Typography>
+                    <Typography>{lesson.words}</Typography>
+
+                    <Typography variant="subtitle2" mt={2}><b>Sample Sentences:</b></Typography>
+                    <pre style={{ whiteSpace: "pre-wrap" }}>{lesson.sentences}</pre>
+
+                    <Typography variant="subtitle2" mt={2}><b>Short Dialogue:</b></Typography>
+                    <pre style={{ whiteSpace: "pre-wrap" }}>{lesson.dialogue}</pre>
+                  </>
+                )}
+
+                {!lesLoad && !lesError && !lesson && (
+                  <Typography color="text.secondary">
+                    İçerik hazırlanıyor...
+                  </Typography>
+                )}
+              </Paper>
+            </Box>
+          </Grid>
         </Grid>
-
-        {/* Sağ: Lesson Content */}
-        <Grid item xs={12} md={4}>
-          <Box sx={{ position:{md:"sticky"}, top:{md:40}, maxHeight:{md:"80vh"}, overflowY:"auto" }}>
-            <Paper elevation={2} sx={{ p:3, bgcolor:"#e8f5e9", borderRadius:3, minHeight:420 }}>
-              <Typography variant="h6" fontWeight="bold" color="success.dark" mb={2}>Lesson Content</Typography>
-
-              {lesLoad && <CircularProgress />}
-              {lesError && <Alert severity="error">{lesError}</Alert>}
-
-              {lesson && (
-                <>
-                  <Typography variant="subtitle2"><b>Grammar:</b></Typography>
-                  <Typography>{lesson.grammar}</Typography>
-
-                  <Typography variant="subtitle2" mt={2}><b>Related Words:</b></Typography>
-                  <Typography>{lesson.words}</Typography>
-
-                  <Typography variant="subtitle2" mt={2}><b>Sample Sentences:</b></Typography>
-                  <pre style={{ whiteSpace:"pre-wrap" }}>{lesson.sentences}</pre>
-
-                  <Typography variant="subtitle2" mt={2}><b>Short Dialogue:</b></Typography>
-                  <pre style={{ whiteSpace:"pre-wrap" }}>{lesson.dialogue}</pre>
-                </>
-              )}
-
-              {!lesLoad && !lesError && !lesson && (
-                <Typography color="text.secondary">
-                  İçerik hazırlanıyor...
-                </Typography>
-              )}
-            </Paper>
-          </Box>
-        </Grid>
-      </Grid>
-    </Box>
+      </Box></>
   );
 }
