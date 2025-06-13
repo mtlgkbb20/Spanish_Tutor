@@ -7,6 +7,10 @@ from api.chat      import router as chat_router
 from api.session   import router as session_router
 from api.lesson    import router as lesson_router
 from api.user_interests import router as interests_router
+from api.user_notes import router as notes_router
+from api.content   import router as content_router
+from api.tasks import router as tasks_router
+
 
 from db import init_db
 import os
@@ -30,3 +34,6 @@ app.include_router(quiz_router,     prefix="/api")
 app.include_router(chat_router,     prefix="/api")
 app.include_router(session_router,  prefix="/api")
 app.include_router(lesson_router,   prefix="/api")
+app.include_router(notes_router, prefix="/api")
+app.include_router(content_router,  prefix="/api")
+app.include_router(tasks_router,    prefix="/api")

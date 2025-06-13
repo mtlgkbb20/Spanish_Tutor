@@ -59,3 +59,15 @@ class UserInterest(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
 
     user = relationship("User", backref="interests")
+
+class UserNote(Base):
+    __tablename__ = "user_notes"
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
+    content = Column(String, nullable=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    user = relationship("User", backref="notes")
+
+
+    

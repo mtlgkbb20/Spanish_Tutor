@@ -16,7 +16,7 @@ export default function LessonCard({
 }) {
   return (
     <Paper
-      elevation={8}
+      elevation={3}
       sx={{
         p: 3,
         borderRadius: 4,

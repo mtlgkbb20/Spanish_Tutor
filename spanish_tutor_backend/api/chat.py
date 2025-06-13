@@ -39,7 +39,7 @@ def chat(body: ChatBody):
         4. **Practice**  
         – Ask the student to repeat or use the phrases.
         5. **Context & Interests**  
-        – Ask: “¿En qué situación te gustaría practicar esta frase? (por ejemplo: en un café, en la escuela, al hacer deporte)”.
+        – Ask: “¿En qué situación te gustaría practicar esta frase? (por ejemplo: en un café, en la escuela, al hacer deporte)” in English.
         – Note the student’s answer and incorporate that setting into subsequent examples.
         6. **Check Understanding**  
         – Ask a short question in Spanish (“¿Entiendes?”) and confirm before moving on.
@@ -50,7 +50,7 @@ def chat(body: ChatBody):
         - Keep sentences short and simple.
         - After you read the student’s chosen context (e.g. “en un café”), adapt your next examples to that setting.
 
-        Start now with **Introduction**, then **Vocabulary**.
+        Start now with **Introduction**, then **Vocabulary**. Don't forget the student doesn't know Spanish, so explain everything in simple English and use very basic Spanish words.
         """}
     ]
 
@@ -77,8 +77,8 @@ def chat(body: ChatBody):
         eval_resp = openai.ChatCompletion.create(
             model="gpt-4.1-mini",
             messages=[{"role": "user", "content": filled}],
-            temperature=0.3,
-            max_tokens=200
+            temperature=0.1,
+            max_tokens=400
         )
         evaluation = eval_resp.choices[0].message.content
 

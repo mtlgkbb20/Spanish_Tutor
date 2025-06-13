@@ -18,6 +18,8 @@ import { curriculum } from "../data/curriculum";
 import QuizComponent from "../components/QuizComponent";
 import NavigationBar from "../components/NavigationBar";
 import LessonCard from "../components/LessonCard";
+import StickyNotes from "../components/StickyNotes";
+
 
 export default function ModuleDetail() {
   const { level, idx } = useParams(); // /module/:level/:idx
@@ -99,11 +101,11 @@ export default function ModuleDetail() {
     if (!input.trim() || !userId) return;
 
     const newHistory = [
-      ...messages.map((m) => ({
+      ...messages.map(m => ({
         speaker: m.sender === "user" ? "Student" : "Teacher",
-        message: m.text,
+        message: m.text
       })),
-      { speaker: "Student", message: input },
+      { speaker: "Student", message: input }
     ];
 
     // add user message immediately
@@ -302,44 +304,12 @@ export default function ModuleDetail() {
 
           {/* Sticky + Quiz */}
           <Grid item xs={12} md={4}>
-            <Grid container direction="column" spacing={3}>
-              <Grid item>
-                <Paper
-                  elevation={2}
-                  sx={{ p: 3, bgcolor: "#fffde7", borderRadius: 3 }}
-                >
-                  <Typography
-                    variant="h6"
-                    color="warning.main"
-                    fontWeight="bold"
-                  >
-                    Sticky Notes
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary" mt={2}>
-                    Buraya konuya özel önemli notları ekleyebilirsin!
-                  </Typography>
-                </Paper>
-              </Grid>
-              <Grid item>
-                <Paper elevation={2} sx={{ p: 3, borderRadius: 3 }}>
-                  <Typography
-                    variant="subtitle1"
-                    fontWeight="bold"
-                    color="info.main"
-                  >
-                    Subject Notes
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary" mt={2}>
-                    Şu an seçili olan modül için öğretmen ya da AI notları burada gösterilecek.
-                  </Typography>
-
-                  <QuizComponent
-                    curriculumId={curriculumId}
-                    onSuccess={handleCompleteModule}
-                  />
-                </Paper>
-              </Grid>
-            </Grid>
+            <Paper elevation={2} sx={{ p: 3, bgcolor: "#fffde7", borderRadius: 3 }}>
+              <Typography variant="h6" color="warning.main" fontWeight="bold" mb={2}>
+                Quick Notes
+              </Typography>
+              <StickyNotes />
+            </Paper>
           </Grid>
 
           {/* Lesson Summary */}
