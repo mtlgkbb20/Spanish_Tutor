@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float, Text, ForeignKey, DateTime
 from datetime import datetime
+from sqlalchemy.orm import relationship
 import os 
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -48,3 +49,13 @@ class LessonContent(Base):
     sentences     = Column(Text)
     dialogue      = Column(Text)
     created_at    = Column(DateTime, default=datetime.utcnow)
+
+class UserInterest(Base):
+    __tablename__ = 'user_interests'
+    id = Column(Integer, primary_key=True, index=True)
+    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
+    user_name = Column(String, nullable=False)
+    interests = Column(String, nullable=False)   # virgülle ayrılmış ilgi alanları
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    user = relationship("User", backref="interests")

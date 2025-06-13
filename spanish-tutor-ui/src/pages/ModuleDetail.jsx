@@ -22,7 +22,7 @@ import LessonCard from "../components/LessonCard";
 export default function ModuleDetail() {
   const { level, idx } = useParams(); // /module/:level/:idx
 
-  // — Curriculum verisi
+  // Curriculum verisi
   const levelObj = useMemo(
     () => curriculum.find((l) => l.level === level),
     [level]
@@ -33,52 +33,31 @@ export default function ModuleDetail() {
   );
   const moduleName = moduleObj?.title;
   const curriculumId = level ? `${level}-${idx}` : null;
-  const userId = localStorage.getItem("userId");
+  const rawUserId = localStorage.getItem("userId");
+  const userId = rawUserId ? parseInt(rawUserId, 10) : null;
 
-  // — Lesson içerik state’leri
+  // Lesson içerik state’leri
   const [lesson, setLesson] = useState(null);
   const [lesLoad, setLesLoad] = useState(false);
   const [lesError, setLesError] = useState(null);
 
-  useEffect(() => {
-    if (!moduleName || !curriculumId) return;
-
-    setLesLoad(true);
-    setLesError(null);
-
-    fetch("http://127.0.0.1:8000/api/lesson", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        user_id: parseInt(userId, 10),
-        curriculum_id: curriculumId,
-        module_title: moduleName,
-        level: levelObj.level,
-      }),
-    })
-      .then((r) => {
-        if (!r.ok) throw new Error("API error");
-        return r.json();
-      })
-      .then((data) => {
-        setLesson({
-          grammar: data.grammar,
-          words: JSON.parse(data.words),
-          sentences: JSON.parse(data.sentences),
-          dialogue: JSON.parse(data.dialogue),
-        });
-      })
-      .catch((err) => setLesError(err.toString()))
-      .finally(() => setLesLoad(false));
-  }, [moduleName, curriculumId, userId, levelObj]);
-
-  // — Chat state’leri
-  const [messages, setMessages] = useState([
-    { sender: "ai", text: "¡Hola! Ben Spanish Tutor, ne öğrenmek istersin?" },
-  ]);
+  // Chat state’leri (cached in localStorage)
+  const [messages, setMessages] = useState(() => {
+    try {
+      const saved = localStorage.getItem(`chat-${curriculumId}`);
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
   const [input, setInput] = useState("");
   const [chatLoading, setChatLoading] = useState(false);
   const chatBoxRef = useRef(null);
+
+  // Persist chat to localStorage on every update
+  useEffect(() => {
+    localStorage.setItem(`chat-${curriculumId}`, JSON.stringify(messages));
+  }, [messages, curriculumId]);
 
   // Scroll to bottom on new message
   useEffect(() => {
@@ -87,53 +66,81 @@ export default function ModuleDetail() {
     }
   }, [messages]);
 
-    const handleChatSend = async (e) => {
-    e.preventDefault();
-    if (!input.trim()) return;
+  // İlk selamlama isteği — sadece chat boşsa
+  useEffect(() => {
+    if (!userId || !levelObj || messages.length > 0) return;
+    const fetchGreeting = async () => {
+      setChatLoading(true);
+      try {
+        const res = await fetch("http://127.0.0.1:8000/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            user_id: userId,
+            history: [],
+            context: { level: levelObj.level, module: moduleName },
+          }),
+        });
+        if (!res.ok) throw new Error(`Status ${res.status}`);
+        const data = await res.json();
+        setMessages([{ sender: "ai", text: data.teacher }]);
+      } catch {
+        setMessages([{ sender: "ai", text: "Selam! Sohbete başlayamıyorum." }]);
+      } finally {
+        setChatLoading(false);
+      }
+    };
+    fetchGreeting();
+  }, [userId, levelObj, moduleName, messages.length]);
 
-    setMessages(m => [...m, { sender: "user", text: input }]);
+  // Mesaj gönderme
+  const handleChatSend = async (e) => {
+    e.preventDefault();
+    if (!input.trim() || !userId) return;
+
+    const newHistory = [
+      ...messages.map((m) => ({
+        speaker: m.sender === "user" ? "Student" : "Teacher",
+        message: m.text,
+      })),
+      { speaker: "Student", message: input },
+    ];
+
+    // add user message immediately
+    const userMsg = { sender: "user", text: input };
+    setMessages((m) => [...m, userMsg]);
     setInput("");
     setChatLoading(true);
 
     try {
-      const payload = {
-        user_id: parseInt(localStorage.getItem("userId"), 10),  // ← buraya
-        history: [
-          // history array’iniz; örneğin:
-          ...messages.map(m => ({
-            speaker: m.sender === "user" ? "Student" : "Teacher",
-            message: m.text
-          })),
-          { speaker: "Student", message: input }
-        ],
-        context: {
-          level: levelObj.level,
-          module: moduleName
-        }
-      };
-
-      const r = await fetch("http://127.0.0.1:8000/api/chat", {
+      const res = await fetch("http://127.0.0.1:8000/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
+        body: JSON.stringify({
+          user_id: userId,
+          history: newHistory,
+          context: { level: levelObj.level, module: moduleName },
+        }),
       });
-
-      if (!r.ok) throw new Error("Chat API error");
-      const d = await r.json();
-      setMessages(m => [...m, { sender: "ai", text: d.teacher }]);
-      if (d.evaluation) {
-        setMessages(m => [...m, { sender: "ai", text: d.evaluation }]);
+      if (!res.ok) throw new Error(`Status ${res.status}`);
+      const data = await res.json();
+      setMessages((m) => [...m, { sender: "ai", text: data.teacher }]);
+      if (data.evaluation) {
+        setMessages((m) => [...m, { sender: "ai", text: data.evaluation }]);
       }
-    } catch (err) {
-      setMessages(m => [...m, { sender: "ai", text: "AI yanıtı alınamadı." }]);
+    } catch {
+      setMessages((m) => [
+        ...m,
+        { sender: "ai", text: "AI yanıtı alınamadı." },
+      ]);
     } finally {
       setChatLoading(false);
     }
   };
 
-
-  // — Modül tamamla
+  // Modül tamamla (quiz onSuccess)
   const handleCompleteModule = async () => {
+    if (!userId || !curriculumId) return;
     await fetch("http://127.0.0.1:8000/api/progress/update", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -144,6 +151,36 @@ export default function ModuleDetail() {
       }),
     });
   };
+
+  // Lesson içeriğini çek
+  useEffect(() => {
+    if (!moduleName || !curriculumId || !userId) return;
+
+    setLesLoad(true);
+    setLesError(null);
+
+    fetch("http://127.0.0.1:8000/api/lesson", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        user_id: userId,
+        curriculum_id: curriculumId,
+        module_title: moduleName,
+        level: levelObj.level,
+      }),
+    })
+      .then((r) => (r.ok ? r.json() : Promise.reject("API error")))
+      .then((data) =>
+        setLesson({
+          grammar: data.grammar,
+          words: JSON.parse(data.words),
+          sentences: JSON.parse(data.sentences),
+          dialogue: JSON.parse(data.dialogue),
+        })
+      )
+      .catch((err) => setLesError(err.toString()))
+      .finally(() => setLesLoad(false));
+  }, [moduleName, curriculumId, userId, levelObj]);
 
   return (
     <>
@@ -181,6 +218,7 @@ export default function ModuleDetail() {
               >
                 Spanish Tutor Chat
               </Typography>
+
               <Box
                 ref={chatBoxRef}
                 sx={{
@@ -236,7 +274,12 @@ export default function ModuleDetail() {
 
               <Divider sx={{ mb: 2 }} />
 
-              <Box component="form" display="flex" gap={1} onSubmit={handleChatSend}>
+              <Box
+                component="form"
+                display="flex"
+                gap={1}
+                onSubmit={handleChatSend}
+              >
                 <TextField
                   placeholder="Mesaj yazın..."
                   variant="outlined"
@@ -272,11 +315,7 @@ export default function ModuleDetail() {
                   >
                     Sticky Notes
                   </Typography>
-                  <Typography
-                    variant="body1"
-                    color="text.secondary"
-                    mt={2}
-                  >
+                  <Typography variant="body1" color="text.secondary" mt={2}>
                     Buraya konuya özel önemli notları ekleyebilirsin!
                   </Typography>
                 </Paper>
@@ -290,11 +329,7 @@ export default function ModuleDetail() {
                   >
                     Subject Notes
                   </Typography>
-                  <Typography
-                    variant="body1"
-                    color="text.secondary"
-                    mt={2}
-                  >
+                  <Typography variant="body1" color="text.secondary" mt={2}>
                     Şu an seçili olan modül için öğretmen ya da AI notları burada gösterilecek.
                   </Typography>
 

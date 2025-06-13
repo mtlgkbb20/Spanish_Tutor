@@ -35,12 +35,12 @@ def get_lesson(body: LessonRequest, db: Session = Depends(get_db)):
     You are a Spanish tutor. Create a concise lesson for level {body.level}. Topic: {body.module_title}.
 
     ⚙️ **Return ONLY valid JSON** with the following exact keys:
-    "grammar": "<short paragraph>",
+    "grammar": "<short paragraph in english explaining the grammar topic> and the rules for it.",
     "words": [               # 8-12 giriş
         {{"es": "<spanish>", "en": "<english>"}}
     ],
     "sentences": [ "<10 sentences…>" ],
-    "dialogue": [            # en az 10 replik
+    "dialogue": [            # at least 10 lines, 2 speakers
         {{"speaker": "Persona 1", "text": "<line>"}},
         {{"speaker": "Persona 2", "text": "<line>"}}
     ]

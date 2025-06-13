@@ -6,6 +6,8 @@ from api.quiz      import router as quiz_router
 from api.chat      import router as chat_router
 from api.session   import router as session_router
 from api.lesson    import router as lesson_router
+from api.user_interests import router as interests_router
+
 from db import init_db
 import os
 init_db()
@@ -21,7 +23,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
+app.include_router(interests_router, prefix="/api")
 app.include_router(user_router,     prefix="/api")
 app.include_router(progress_router, prefix="/api")
 app.include_router(quiz_router,     prefix="/api")
