@@ -1,8 +1,11 @@
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
-from ..db import SessionLocal
-from ..models import Progress
+import os 
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from db import SessionLocal
+from models import Progress
 from datetime import datetime
 
 router = APIRouter()

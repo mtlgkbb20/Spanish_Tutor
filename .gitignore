@@ -1,0 +1,23 @@
+config.py
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.egg
+*.egg-info/
+*.dist-info/
+*.whl
+*.coverage
+*.mypy_cache/
+*.pytest_cache/
+*.vscode/
+# Ignore Jupyter Notebook checkpoints
+node_modules/
+package-lock.json
+package.json
+vite.config.js
+venv/
