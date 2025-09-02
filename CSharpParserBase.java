@@ -21,7 +21,60 @@ public abstract class CSharpParserBase extends Parser
     }
 }
 September 2 is the 245th day of the year (246th in leap years) in the Gregorian calendar; 120 days remain until the end of the year.
+Gılgamış Destanı, antik Mezopotamya'dan günümüze ulaşan en eski edebiyat eseri ve Piramit metinlerinden sonra en eski ikinci dini metin olarak kabul edilen destansı bir şiirdir.[1] Gılgamış'ın yazınsal tarihi, Üçüncü Ur Hanedanlığı'ndan (y. MÖ 2100) kalma Uruk Kralı Bilgamış ("Gılgamış" için kullanılan Sümerce ad) hakkında yazılan beş Sümer şiiriyle başlar. Bu bağımsız hikâyeler, daha sonra Akadcada birleşik bir destan için kaynak olarak kullanılmıştır. "Eski Babilce" yorumu olarak bilinen bu birleşik destanın günümüze ulaşan ilk yorumu, MÖ 18. yüzyıla dayanır ve adını açılışından (Shūtur eli sharrī: "Diğer Tüm Krallardan Üstün") almıştır. Destanın sadece birkaç tableti günümüze ulaşmıştır. Sîn-lēqi-unninni tarafından derlenen daha sonraki Standart Babilce yorumu, MÖ 13. yüzyıldan 10. yüzyıla kadar uzanır ve Sha naqba īmuru[a] ("Sonsuz Derinliği Gören", çağdaş terimlerle: "Bilinmeyeni Gören") açılışına dayanır. Bunun yaklaşık üçte ikisi daha uzundur ve on iki tabletlik yorum kurtarılmıştır. En iyi kopyalardan bazıları, MÖ 7. yüzyılda yaşamış olan Asur Kralı Asurbanipal'in kütüphane kalıntılarında keşfedilmiştir.
 
+Hikâyenin ilk yarısında Uruk'un kralı Gılgamış ile tanrılar tarafından Gılgamış'ın Uruk halkına baskı yapmasını önlemek için yaratılan vahşi bir adam olan Enkidu anlatılır. Enkidu, bir tapınak fahişesi olan Şamhat ile cinsel ilişkiye girerek uygar hale geldikten sonra Gılgamış'ı bir güç sınavına davet ettiği Uruk'a gider. Tapınak fahişeleri, o dönemde tapınakların maddi ihtiyaçlarının karşılanması için kutsal bir görev yaptıklarına inanılan kişilerdir.
+
+Gılgamış, mücadeleyi kazanmasına karşın Enkidu ile arkadaş olur. Birlikte, efsanevi Sedir Ormanı'na altı günlük bir yolculuk yapar ve burada koruyucu, korkunç Humbaba'yı öldürmeyi ve kutsal Sedir'i kesmeyi planlarlar.[3] Tanrıça İştar, cinsel ilişki önerisini geri çeviren Gılgamış'ı cezalandırmak için Gök Boğası'nı gönderir. Gılgamış ve Enkidu, Gök Boğası'nı öldürdükten sonra tanrılar, Enkidu'yu ölüme mahkûm etmeye karar verir ve Enkidu'nun canını alır.
+
+Destanın ikinci yarısında, Enkidu'nun ölümünden ötürü acı çeken Gılgamış'ın sonsuz yaşamın gizemini keşfetmek için uzun ve tehlikeli bir yolculuğa çıkması anlatılır. En sonunda "Aradığınız hayatı, asla bulamayacaksınız. Tanrılar insanı yarattığında insanın payına ölüm düşmüştür ve tanrılar, hayatı kendi ellerinde tutmuştur." bilgisini öğrenir.[4][5] Bununla birlikte yaptırdığı büyük yapılar, Siduri'nin önerisi ve ölümsüz adam Utnapiştim'in Büyük Tufan hakkında söyledikleri sayesinde Gılgamış'ın ünü, ölümünden sonra Gılgamış hikâyesine olan ilginin artmasıyla günümüze ulaşmış; birçok dile çevrilmiş ve popüler kurgu eserlerinde yer almıştır.
+
+Destan, dinde ve kahramanlık destanları geleneğinde temel bir eser olarak kabul edilir; Gılgamış, Herakles (Herkül) gibi daha sonraki kahramanların ilk örneğini oluşturur ve destanın kendisinin Homeros destanlarına etkisi olmuştur.[6]
+
+Geçmişi
+
+Şu anda Louvre'da bulunan ve muhtemelen Gılgamış'ı temsil eden eski Asur heykeli.
+2000 yılı aşkın bir zaman diliminden farklı kaynaklar mevcuttur. En eski Sümer şiirleri artık tek bir destanın parçaları olmaktan çok, genel olarak ayrı öyküler olarak kabul edilmektedir.[7] Bu şiirler, Üçüncü Ur Hanedanı (y. MÖ 2100) dönemine kadar gitmektedir.[8] Eski Babilce tabletler,[7] tek bir Gılgamış Destanı anlatısı için günümüze ulaşan en eski tabletlerdir.[9] Daha eski Eski Babilce tabletler ve daha sonraki Akadca yorumu, daha sonraki metinlerdeki boşlukları doldurmak için kullanılan önceki metinler ile çağdaş çeviriler için önemli kaynaklardır. Yeni keşiflere dayanan birkaç yenilenmiş yorum yayımlanmış olsa da destan eksik kalmıştır.[10] Eski Babilce metninin çözümlenmesi, destanın olası erken biçimlerini yeniden oluşturmak için kullanılmıştır.[11] Standart Babilce yorumu olarak da anılan en güncel Akadca yorumu, on iki tabletten oluşur ve MÖ 1300 ile MÖ 1000 yılları arasında yaşadığı düşünülen[12] Sîn-lēqi-unninni tarafından düzenlenmiştir.[13]
+
+Asurca çivi yazılı tabletlerin yaklaşık 15 bin parçası, 1850'lerin başında Ninova'daki Asurbanipal Kütüphanesi'nde Austen Henry Layard, yardımcısı Hormuzd Rassam ve W.K. Loftus tarafından keşfedildi.[14] Sonraki on yılın sonlarında, British Museum bunları incelemesi için George Smith'i işe aldı; 1872'de Smith, İncil Arkeolojisi Derneği'nden (Society of Biblical Archaeology) önce çevrilmiş parçaları okudu[15] ve 1875 ile 1876'da daha kapsamlı çeviriler yayımladı.[14] Gılgamış'ın ana karakteri, adındaki çivi yazısı logografileri doğru bir şekilde söylenmeden önce dünyaya "İzdubar" olarak yeniden tanıtıldı.[14] 1891'de Paul Haupt çivi yazısı metnini topladı ve dokuz yıl sonra Peter Jensen kapsamlı bir baskı yaptı; R. Campbell Thompson, her ikisinin çalışmasını 1930'da güncelledi. Sonraki yirmi yıl boyunca Samuel Noah Kramer, Sümer şiirlerini yeniden bir araya getirdi.[16]
+
+1998'de Amerikalı Asurolog Theodore Kwasman, British Museum'un deposunda destanın ilk satırlarını içerdiğine inanılan bir parça keşfetti. 1878'de bulunan ve MÖ 600 ile MÖ 100 arasına tarihlenen bu parça, kurtulmasından bu yana bir yüzyıldan fazla bir süre uzmanlar tarafından incelenmedi.[17] Parçada "Her şeyi gören, toprağın temeli olan, (her şeyi) bilen, her konuda bilgeydi: Gılgamış." yazılıydı.[18] Efsanelerde Gılgamış'ın düşmanlarından birinin babası olarak bahsedilen Kiş'li Enmebaragesi ile ilgili eserlerin keşfi, Gılgamış'ın tarihsel varlığına inanılırlık kazandırmıştır.[19]
+
+Kesin çağdaş çeviri, 2003 yılında Oxford University Press tarafından yayınlanan Andrew George'a ait iki ciltlik eleştirel bir çalışmasıdır. Cambridge akademisyeni Eleanor Robson tarafından yapılan bir kitap incelemesinde, George'un bu çalışmasının son 70 yılda Gılgamış ile ilgili yapılan en önemli eleştirel çalışma olduğu savlanır.[20]
+
+Yorumları
+Bulunan çeşitli kaynaklardan destanın iki ana yorumu kısmen yeniden bir araya getirildi: Standart Babilce yorumu yani "Derinleri gören kişi" ile Eski Babilce yorumu yani "Diğer tüm kralları aşan". Gılgamış hakkında daha önce yazılan beş Sümer şiiri kısmen kurtarılmış iken bu şiirlerden bazıları Babil yorumundaki belirli bölümlerin ilkel yorumlarını, diğerleri ise ilgisiz hikâyeler içermektedir.
+
+Standart Babilce yorumu
+Destanın standart Babilce yorumu, Hormuzd Rassam tarafından 1853'te Ninova'daki Asurbanipal Kütüphanesi'nde keşfedildi. "Standart Babilce" edebi amaçlar için kullanılan bir edebi tarzı ifade eder. Bu yorum Sin-liqe-unninni tarafından MÖ 1300 ile 1000 yılları arasında önceki metinlerden derlenmiştir. Standart Babilce yorumu, eski yorumdan ayrı açılış sözcüklerine sahiptir. Eski yorum "Diğer tüm kralları aşan" ifadesiyle başlarken Standart Babilce yorumunda "Derinleri gören" (ša naqba īmuru) ifadesi ile başlar. Gılgamış'a tanrılara nasıl tapılacağı, neden insanlar için ölüm emredildiği, iyi bir kralın nasıl olduğu ve nasıl iyi yaşanacağı hakkında bilgi verilmiştir. Tufan efsanesinin kahramanı Utnapiştim'in hikâyesi, Babil destanı Atra-Hasis'te de bulunabilir.[21]
+
+12. tablet, özgün 11'in devamı niteliğindedir ve umulana göre daha sonraki bir tarihte eklenmiştir.[22] İyi hazırlanmış 11 tabletlik destanla çok az ilişkisi vardır; 12. tablet, Gılgamış'ın Enkidu'yu Yeraltı Dünyası'ndan bazı nesnelerini almak için gönderdiği önceki bir Sümer masalının yakın bir kopyasıdır. Bu tablete göre Enkidu, Yeraltı Dünyası'nın doğasını Gılgamış ile ilişkilendirmek için bir ruh biçiminde geri döner.
+
+Notlar
+^ 2008 yılında, Ugarit'te bulunan ve standart yorumdan önce yazılmış olan ortalama Babil versiyonunun el yazmaları Sha naqba īmuru ile başlamıştır.[2]
+Kaynakça
+^ "Epic of Gilgamesh | Summary, Characters, & Facts | Britannica". www.britannica.com (İngilizce). 5 Eylül 2015 tarihinde kaynağından arşivlendi. Erişim tarihi: 12 Kasım 2021.
+^ Sin-léqi-unnínni (2007). Ele que o abismo viu (Portekizce). Jacyntho Lins Brandão tarafından çevrildi. Autêntica. s. 23. ISBN 978-85-513-0283-5.
+^ Krstovic, Jelena O., (Ed.) (2005). Epic of Gilgamesh Classical and Medieval Literature Criticism. 74. Detroit, MI: Gale. ISBN 9780787680213. OCLC 644697404.
+^ Thrower, James (1980). The Alternative Tradition: A Study of Unbelief in the Ancient World. The Hague, The Netherlands: Mouton Publishers.
+^ Frankfort, Henri (1974) [1949]. "Chapter VII: Mesopotamia: The Good Life". Before Philosophy: The Intellectual Adventure of Ancient Man, an essay on speculative thought in the ancient near East. Penguin. s. 226. OCLC 225040700.
+^ Temple, Robert (1991). He who saw everything: a verse translation of the Epic of Gilgamesh. Random Century Group Ltd. pp. viii–ix.
+^ a b Dalley 2000, s. 45.
+^ Dalley 2000, ss. 41–42.
+^ Mitchell, T.C. (1988). The Bible in the British Museum. The British Museum Press. s. 70.
+^ George 2003.
+^ Abusch, T. (1993). "Gilgamesh's Request and Siduri's Denial. Part I: The Meaning of the Dialogue and Its Implications for the History of the Epic". The Tablet and the Scroll; Near Eastern Studies in Honor of William W. Hallo. CDL Press. ss. 1-14.
+^ George 2003, s. ii.
+^ George, Andrew R. (2008). "Shattered tablets and tangled threads: Editing Gilgamesh, then and now". Aramazd. Armenian Journal of Near Eastern Studies. 3: 11. 7 Aralık 2021 tarihinde kaynağından arşivlendi12 Eylül 2018.
+^ a b c George, Andrew R. (2008). "Shattered tablets and tangled threads: Editing Gilgamesh, then and now". Aramazd. Armenian Journal of Near Eastern Studies. 3: 7-30. 7 Aralık 2021 tarihinde kaynağından arşivlendi12 Eylül 2018.
+^ Smith, George (3 Aralık 1872). "The Chaldean Account of the Deluge". Sacred-Texts.com. 3 Aralık 2003 tarihinde kaynağından arşivlendi. Erişim tarihi: 27 Mart 2020.
+^ George 2003, s. xi.
+^ "First lines of oldest epic poem found". The Independent (İngilizce). 16 Kasım 1998. 10 Kasım 2013 tarihinde kaynağından arşivlendi. Erişim tarihi: 16 Eylül 2019.
+^ Evans, Barry. "It Was a Dark and Stormy Night". North Coast Journal (İngilizce). 16 Nisan 2015 tarihinde kaynağından arşivlendi. Erişim tarihi: 16 Eylül 2019.
+^ Dalley 2000, ss. 40–41.
+^ Mawr, Bryn (21 Nisan 2004). "Bryn Mawr Classical Review 2004.04.21". Bryn Mawr Classical Review. 10 Temmuz 2017 tarihinde kaynağından arşivlendi18 Ekim 2017.
+^ Tigay 1982, ss. 23, 218, 224, 238.
+^ George 2003, ss. xxvii–viii.
 Events
 Pre-1600
 44 BC – Pharaoh Cleopatra VII of Egypt declares her son co-ruler as Ptolemy XV Caesarion.[1]
