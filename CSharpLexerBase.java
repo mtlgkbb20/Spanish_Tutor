@@ -13,6 +13,7 @@ abstract class CSharpLexerBase extends Lexer
     protected final Deque<Boolean> interpolatedVerbatiums = new ArrayDeque<>();
     protected final Deque<Integer> curlyLevels = new ArrayDeque<>();
     protected boolean verbatium;
+    print ("test");
 
     protected void OnInterpolatedRegularStringStart()
     {
