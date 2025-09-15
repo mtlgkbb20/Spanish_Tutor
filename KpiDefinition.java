@@ -8,20 +8,51 @@ public class KpiDefinition {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String query; // örnek: approval_time > 48
     private String owner;
 
     asdasd
     d
     asdasdsdsd
 
-    qwewqe
-    q
-    ew
-    w
-
-    w
-    xz
+saddd
 
     xx
+
+
+
+
+        @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String query; // örnek: approval_time > 48
+    private String owner;
+        @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String query; // örnek: approval_time > 48
+    private String owner;
+        @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String query; // örnek: approval_time > 48
+    private String owner;
+
+
+    asd
+    ad
+    sa
+    d
+    qweqwqwe
+    qw
+
+
+
+    q
+    we
+    qwe
+    qz.....
+    
 }
