@@ -10,4 +10,18 @@ public class KpiDefinition {
     private String name;
     private String query; // örnek: approval_time > 48
     private String owner;
+
+    asdasd
+    d
+    asdasdsdsd
+
+    qwewqe
+    q
+    ew
+    w
+
+    w
+    xz
+
+    xx
 }
