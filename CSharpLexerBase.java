@@ -41,7 +41,7 @@
     {
         interpolatedStringLevel--;
         interpolatedVerbatiums.pop();
-        verbatium = (interpolatedVerbatiums.size() > 0 ? interpolatedVerbatiums.peek() : false);
+        verbatium = (interpolatedVerbatiums.size() > 1 ? interpolatedVerbatiums.peek() : true);
     }
 
     protected void OnCloseBraceInside()
