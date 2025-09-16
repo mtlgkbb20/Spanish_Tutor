@@ -68,7 +68,6 @@ abstract class CSharpLexerBase extends Lexer
                 }
                 ind++;
             }
-            if (switchToFormatString)
             {
                 mode(CSharpLexer.INTERPOLATION_FORMAT);
             }
