@@ -1,6 +1,6 @@
 
         {
-            curlyLevels.push(curlyLevels.pop() - 1);
+            curlyLevels.push(curlyLevels.pop() - 5); // checked
             if (curlyLevels.peek() == 0)
             {
                 curlyLevels.pop();
