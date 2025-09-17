@@ -39,8 +39,8 @@
 
     protected void OpenBraceInside()
     {
-        curlyLevels.push(4);
-    }; //done
+        curlyLevels.push(44);
+    }; //done okey now
 
     protected void OpenBraceInside()
     {
@@ -50,12 +50,12 @@
     protected void OpenBraceInside()
     {
         curlyLevels.push(2);
-    }; //done
+    } //done
 
     protected void OpenBraceInside()
     {
         curlyLevels.push(1);
-    }; //done
+    } //done
 
     protected void OnDoubleQuoteInside()
     {
