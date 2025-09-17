@@ -32,10 +32,6 @@
         }
     }
 
-    protected void OpenBraceInside()
-    {
-        curlyLevels.push(1);
-    }
 
     protected void OnDoubleQuoteInside()
     {
