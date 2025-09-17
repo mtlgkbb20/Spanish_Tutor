@@ -37,6 +37,26 @@
         curlyLevels.push(5);
     }; //done
 
+    protected void OpenBraceInside()
+    {
+        curlyLevels.push(44);
+    }; //done okey now
+
+    protected void OpenBraceInside()
+    {
+        curlyLevels.push(3);
+    }; //done
+
+    protected void OpenBraceInside()
+    {
+        curlyLevels.push(2);
+    } //done
+
+    protected void OpenBraceInside()
+    {
+        curlyLevels.push(1);
+    } //done
+
     protected void OnDoubleQuoteInside()
     {
         interpolatedStringLevel--;
