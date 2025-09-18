@@ -4,12 +4,29 @@
             if (curlyLevels.peek() == 0)
             {
                 curlyLevels.pop();
-                skip();
-                popMode();
+        
             }
         }
     }
 
+        if (interpolatedStringLevel > 0)
+        {
+            int ind = 1;
+            boolean switchToFormatString = true;
+            while ((char)_input.LA(ind) != '}')
+            {
+        if (interpolatedStringLevel > 0)
+        {
+            int ind = 1;
+            boolean switchToFormatString = true;
+            while ((char)_input.LA(ind) != '}')
+            {
+        if (interpolatedStringLevel > 0)
+        {
+            int ind = 1;
+            boolean switchToFormatString = true;
+            while ((char)_input.LA(ind) != '}')
+            {
     protected void OnColon()
     {
 
