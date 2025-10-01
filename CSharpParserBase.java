@@ -6,26 +6,11 @@ public abstract class CSharpParserBase extends Parser
     {
         super(input);
     }
-
-    protected boolean IsLocalVariableDeclaration()
-    {
-        if (!(this._ctx instanceof CSharpParser.Local_variable_declarationContext)) {
-            return false;
-        }
-        CSharpParser.Local_variable_declarationContext local_var_decl = (CSharpParser.Local_variable_declarationContext)this._ctx;
-        if (local_var_decl == null) return true;
-        CSharpParser.Local_variable_typeContext local_variable_type = local_var_decl.local_variable_type();
-        if (local_variable_type == null) return true;
-        if (local_variable_type.getText().equals("var")) return false;
-        return true;
-    }
-}
-September 2 is the 245th day of the year (246th in leap years) in the Gregorian calendar; 120 days remain until the end of the year.
-Gılgamış Destanı, antik Mezopotamya'dan günümüze ulaşan en eski edebiyat eseri ve Piramit metinlerinden sonra en eski ikinci dini metin olarak kabul edilen destansı bir şiirdir.[1] Gılgamış'ın yazınsal tarihi, Üçüncü Ur Hanedanlığı'ndan (y. MÖ 2100) kalma Uruk Kralı Bilgamış ("Gılgamış" için kullanılan Sümerce ad) hakkında yazılan beş Sümer şiiriyle başlar. Bu bağımsız hikâyeler, daha sonra Akadcada birleşik bir destan için kaynak olarak kullanılmıştır. "Eski Babilce" yorumu olarak bilinen bu birleşik destanın günümüze ulaşan ilk yorumu, MÖ 18. yüzyıla dayanır ve adını açılışından (Shūtur eli sharrī: "Diğer Tüm Krallardan Üstün") almıştır. Destanın sadece birkaç tableti günümüze ulaşmıştır. Sîn-lēqi-unninni tarafından derlenen daha sonraki Standart Babilce yorumu, MÖ 13. yüzyıldan 10. yüzyıla kadar uzanır ve Sha naqba īmuru[a] ("Sonsuz Derinliği Gören", çağdaş terimlerle: "Bilinmeyeni Gören") açılışına dayanır. Bunun yaklaşık üçte ikisi daha uzundur ve on iki tabletlik yorum kurtarılmıştır. En iyi kopyalardan bazıları, MÖ 7. yüzyılda yaşamış olan Asur Kralı Asurbanipal'in kütüphane kalıntılarında keşfedilmiştir.
-
-Hikâyenin ilk yarısında Uruk'un kralı Gılgamış ile tanrılar tarafından Gılgamış'ın Uruk halkına baskı yapmasını önlemek için yaratılan vahşi bir adam olan Enkidu anlatılır. Enkidu, bir tapınak fahişesi olan Şamhat ile cinsel ilişkiye girerek uygar hale geldikten sonra Gılgamış'ı bir güç sınavına davet ettiği Uruk'a gider. Tapınak fahişeleri, o dönemde tapınakların maddi ihtiyaçlarının karşılanması için kutsal bir görev yaptıklarına inanılan kişilerdir.
-
-Gılgamış, mücadeleyi kazanmasına karşın Enkidu ile arkadaş olur. Birlikte, efsanevi Sedir Ormanı'na altı günlük bir yolculuk yapar ve burada koruyucu, korkunç Humbaba'yı öldürmeyi ve kutsal Sedir'i kesmeyi planlarlar.[3] Tanrıça İştar, cinsel ilişki önerisini geri çeviren Gılgamış'ı cezalandırmak için Gök Boğası'nı gönderir. Gılgamış ve Enkidu, Gök Boğası'nı öldürdükten sonra tanrılar, Enkidu'yu ölüme mahkûm etmeye karar verir ve Enkidu'nun canını alır.
+wrong
+    
+    
+    
+    kte, efsanevi Sedir Ormanı'na altı günlük bir yolculuk yapar ve burada koruyucu, korkunç Humbaba'yı öldürmeyi ve kutsal Sedir'i kesmeyi planlarlar.[3] Tanrıça İştar, cinsel ilişki önerisini geri çeviren Gılgamış'ı cezalandırmak için Gök Boğası'nı gönderir. Gılgamış ve Enkidu, Gök Boğası'nı öldürdükten sonra tanrılar, Enkidu'yu ölüme mahkûm etmeye karar verir ve Enkidu'nun canını alır.
 
 Destanın ikinci yarısında, Enkidu'nun ölümünden ötürü acı çeken Gılgamış'ın sonsuz yaşamın gizemini keşfetmek için uzun ve tehlikeli bir yolculuğa çıkması anlatılır. En sonunda "Aradığınız hayatı, asla bulamayacaksınız. Tanrılar insanı yarattığında insanın payına ölüm düşmüştür ve tanrılar, hayatı kendi ellerinde tutmuştur." bilgisini öğrenir.[4][5] Bununla birlikte yaptırdığı büyük yapılar, Siduri'nin önerisi ve ölümsüz adam Utnapiştim'in Büyük Tufan hakkında söyledikleri sayesinde Gılgamış'ın ünü, ölümünden sonra Gılgamış hikâyesine olan ilginin artmasıyla günümüze ulaşmış; birçok dile çevrilmiş ve popüler kurgu eserlerinde yer almıştır.
 
