@@ -11,7 +11,7 @@ from api.user_notes import router as notes_router
 from api.content   import router as content_router
 from api.tasks import router as tasks_router
 
-
+# python comment added
 from db import init_db
 import os
 init_db()
