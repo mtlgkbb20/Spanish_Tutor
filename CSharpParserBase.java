@@ -8,9 +8,8 @@ public abstract class CSharpParserBase extends Parser
     }
 perfect code
     
-    
-    University Press tarafından yayınlanan Andrew George'a ait iki ciltlik eleştirel bir çalışmasıdır. Cambridge akademisyeni Eleanor Robson tarafından yapılan bir kitap incelemesinde, George'un bu çalışmasının son 70 yılda Gılgamış ile ilgili yapılan en önemli eleştirel çalışma olduğu savlanır.[20]
-
+ Press tarafından yayınlanan Andrew George'a ait iki ciltlik eleştirel bir çalışmasıdır. Cambridge akademisyeni Eleanor Robson tarafından yapılan bir kitap incelemesinde, George'un bu çalışmasının son 70 yılda Gılgamış ile ilgili yapılan en önemli eleştirel çalışma olduğu savlanır.[20]
+asdasd
 Yorumları
 Bulunan çeşitli kaynaklardan destanın iki ana yorumu kısmen yeniden bir araya getirildi: Standart Babilce yorumu yani "Derinleri gören kişi" ile Eski Babilce yorumu yani "Diğer tüm kralları aşan". Gılgamış hakkında daha önce yazılan beş Sümer şiiri kısmen kurtarılmış iken bu şiirlerden bazıları Babil yorumundaki belirli bölümlerin ilkel yorumlarını, diğerleri ise ilgisiz hikâyeler içermektedir.
 
