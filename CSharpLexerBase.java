@@ -21,13 +21,11 @@
             boolean switchToFormatString = true;
             while ((char)_input.LA(ind) != '}')
             {
-        if (interpolatedStringLevel > 0)
-        {
-            int ind = 1;
-            boolean switchToFormatString = true;
-            while ((char)_input.LA(ind) != '}')
-            {
-    protected void OnColon()
+
+
+
+
+                    
     {
 
         if (interpolatedStringLevel > 0)
